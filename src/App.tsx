@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Header } from "./Header";
 import { Menu } from "./Menu";
-
+import { DynamicData } from "./DynamicData";
+import {content} from "./data/content"
 
 const sections = ["About Me", "Work Experience", "Education", "Skills", "Projects"];
 function App() {
@@ -11,8 +12,8 @@ function App() {
     <div className="min-h-screen flex flex-col text-blue-800">
       <Header/>
       <Menu sections={sections} selected={selected} setSelected={setSelected} />
-      {/* <DynamicData content={content} selected={selected} />
-      <Footer /> */}
+      <DynamicData content={content} selected={selected} />
+      {/* <Footer /> */}
     </div>
 
     
