@@ -1,7 +1,3 @@
-type WorkItem = {
-    title: string;
-    points: string[];
-  };
   
   export const content: Record<string, any> = {
     "About Me": {
