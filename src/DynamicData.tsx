@@ -12,6 +12,9 @@ export function DynamicData({ content, selected }: DynamicDataProps) {
           {section?.header_one && (
             <p className="text-lg whitespace-pre-line">{section.header_one}</p>
           )}
+           {section?.header_two && (
+            <p className="text-lg whitespace-pre-line">{section.header_two}</p>
+          )}
     
           {section?.work_items &&
             section.work_items.map((job: { title: string; points: string[] }, idx: number) => (
@@ -24,6 +27,27 @@ export function DynamicData({ content, selected }: DynamicDataProps) {
                 </ul>
               </div>
             ))}
+             {section?.skill_groups && (
+        <div className="space-y-4">
+          {section.skill_groups.map(
+            (group: { type: string; skills: string[] }, idx: number) => (
+              <div key={idx}>
+                <h3 className="text-md font-semibold mb-2">{group.type}</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {group.skills.map((skill, i) => (
+                    <li
+                      key={i}
+                      className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
+        </div>
+      )}
         </div>
       );
 };
