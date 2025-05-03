@@ -27,7 +27,7 @@ export function DynamicData({ content, selected }: DynamicDataProps) {
                 </ul>
               </div>
             ))}
-             {section?.skill_groups && (
+          {section?.skill_groups && (
         <div className="space-y-4">
           {section.skill_groups.map(
             (group: { type: string; skills: string[] }, idx: number) => (
@@ -48,6 +48,21 @@ export function DynamicData({ content, selected }: DynamicDataProps) {
           )}
         </div>
       )}
+      {section?.project_links &&
+        section.project_links.map((project: {name: string, description: string,link:string}, idx:number) => (
+          <div key={idx}  className="p-4 border rounded-md shadow-sm">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 text-lg font-medium hover:underline"
+                >
+                  {project.name}
+                </a>
+                <p className="text-gray-700 mt-1 text-sm">{project.description}</p>
+              </div>
+        ))
+      }
         </div>
       );
 };

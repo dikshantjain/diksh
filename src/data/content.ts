@@ -64,8 +64,14 @@
         },
       ],
     },
-    Projects:{
-      header_one: "Coming soon",
-    }
+    Projects: {
+      project_links: [
+        {
+          name: "Tic-Tac-Toe React Game",
+          description: "A tic-tac-toe game developed using reactJs and tailwind",
+          link: "https://dikshantjain.github.io/tic-tac-toe/",
+        },
+      ],
+    },
   };
   
